@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:neurogrip:vision-telemetry:v1",
+  "title": "Neurogrip vision telemetry v1",
+  "description": "Transport-neutral vision recommendation, never an actuator command. Millimetres are used only for calibrated/validated geometry. The controller separately authorizes all movement.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "session_id", "sequence", "timestamp_ms", "capture_age_ms", "valid_for_ms", "mode", "direction", "strike_permit", "gap_mm", "quality", "scale_valid", "block_reasons"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "session_id": {"type": "integer", "minimum": 0, "maximum": 4294967295, "description": "Random uint32 source boot/session identifier. A changed session needs an explicit receiver handshake; it must not silently rearm."},
+    "sequence": {"type": "integer", "minimum": 0, "maximum": 4294967295, "description": "Increments for each packet, modulo 2^32. Accept only forward deltas in [1, 2^31-1] after session pairing."},
+    "timestamp_ms": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615, "description": "Source monotonic milliseconds at serialization. Diagnostic only: source and controller clocks are not inherently synchronized."},
+    "capture_age_ms": {"type": "integer", "minimum": 0, "maximum": 65535, "description": "Age from actual frame capture to serialization. Includes known inference/buffering delay. If actual sensor capture time is unavailable, an additional measured upstream delay budget is necessary."},
+    "valid_for_ms": {"type": "integer", "minimum": 1, "maximum": 65535, "description": "Maximum total frame age, not a TTL starting at receipt. Receiver uses a local age cap as well. Runtime validates capture_age_ms < valid_for_ms for a permit."},
+    "mode": {"type": "string", "enum": ["SIMULATION", "LIVE"], "description": "Synthetic/replay data uses SIMULATION and cannot carry a hardware permit."},
+    "direction": {"type": "integer", "enum": [0, 1, 2, 255], "description": "0=BACKWARDS, 1=UPRIGHT, 2=FORWARDS, 255=UNKNOWN. Recommendation uses the physical directions agreed during stroke calibration, never an assumed image-axis mapping."},
+    "strike_permit": {"type": "boolean", "description": "Vision condition only. A true heartbeat does not initiate or repeat a strike. Controller must receive its own separately armed one-shot request and enforce local interlocks."},
+    "gap_mm": {"type": ["number", "null"], "minimum": 0, "maximum": 1000000, "description": "Estimated finger-to-target surface gap in millimetres under calibrated geometry. Unknown is null; zero means estimated contact. Monocular depth is an estimate with scene-dependent error."},
+    "quality": {"type": "number", "minimum": 0, "maximum": 1, "description": "Heuristic signal-quality score, not a calibrated probability and not proof of a collision-free path."},
+    "scale_valid": {"type": "boolean", "description": "Metric calibration is accepted by application checks. Controller still requires its own validated error margin and calibrated reachable stroke."},
+    "block_reasons": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "enum": ["stale_frame", "unknown_depth", "uncalibrated", "low_quality", "target_missing", "finger_missing", "unreachable", "simulation", "direction_unknown", "controller_unarmed", "invalid_geometry", "occluded", "calibration_unvalidated", "no_stroke_calibration", "camera_moved", "depth_out_of_range"]}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"strike_permit": {"const": true}}},
+      "then": {
+        "properties": {
+          "mode": {"const": "LIVE"},
+          "direction": {"enum": [0, 1, 2]},
+          "scale_valid": {"const": true},
+          "gap_mm": {"type": "number"},
+          "quality": {"exclusiveMinimum": 0},
+          "block_reasons": {"maxItems": 0}
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "calibration": "stereo.json",
+  "controller": null,
+  "controller_source_port": 55051,
+  "shared_memory_name": "neurogrip_vision_v1",
+  "stroke_config": "config.example.json",
+  "recommendations_enabled": false,
+  "stereo_timing_validated": false,
+  "exposure_skew_bound_ms": null,
+  "max_pair_skew_ms": 20.0,
+  "stale_after_ms": 500,
+  "heartbeat_ms": 50,
+  "num_disparities": 128,
+  "block_size": 5,
+  "min_depth_mm": 100.0,
+  "max_depth_mm": 2000.0,
+  "display_host": "127.0.0.1",
+  "display_port": 8090
+}

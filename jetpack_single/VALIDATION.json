@@ -1,0 +1,88 @@
+{
+  "release_version": "2026.10.05",
+  "target": "JetPack 5.1.2 / L4T R35.4.1 / Ubuntu 20.04 / Linux aarch64 / Python 3.8",
+  "test_suite": {
+    "result": "passed",
+    "count": 165,
+    "host": "Windows AMD64, Python 3.13",
+    "command": "python -m unittest discover -s tests"
+  },
+  "jetpack_specific_tests": {
+    "application_capture_http_udp": 17,
+    "depth_cpu_trt_fallback": 17,
+    "offline_install_platform_checks": 15,
+    "mapped_bus_processes": 11
+  },
+  "actual_python38_compilation": {
+    "version": "3.8.10",
+    "modules": 12,
+    "result": "passed"
+  },
+  "exact_runtime_model_smoke": {
+    "platform": "Windows AMD64 QA; not NEON hardware validation",
+    "python": "3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]",
+    "numpy": "1.24.4",
+    "opencv": "4.5.4",
+    "onnxruntime": "1.16.3",
+    "backend": "ONNX Runtime CPU",
+    "model_sha256": "e01fc1a2c101d80b015550b252e9d9c7b4621a812b6908eb79dde1e943439039",
+    "shape": [
+      960,
+      540
+    ],
+    "metric": true,
+    "valid_fraction": 1.0,
+    "load_seconds": 1.1559454000000002,
+    "inference_seconds": 1.2490670999999978,
+    "percentiles_m": [
+      1.2204428827762603,
+      1.276445209980011,
+      1.392321469783783
+    ],
+    "runtime_tests": {
+      "passed": 17,
+      "failed": 0,
+      "python": "3.8.10",
+      "numpy": "1.24.4",
+      "opencv": "4.5.4"
+    },
+    "package_cli_self_test": {
+      "passed": true,
+      "model_sha256_verified": true,
+      "depth_units": "metres",
+      "finite_fraction": 1.0
+    }
+  },
+  "export_numerical_validation": {
+    "max_absolute_error_m": 4.112720489501953e-06,
+    "torch_version": "2.11.0+cu128",
+    "onnxruntime_version": "1.23.2"
+  },
+  "offline_wheel_metadata": {
+    "wheel_count": 17,
+    "result": "passed",
+    "details": "WHEEL_AUDIT.json"
+  },
+  "shell_syntax": {
+    "result": "passed",
+    "checker": "Git Bash bash -n"
+  },
+  "recorded_neon_frame_app_smoke": {
+    "result": "passed",
+    "mode": "SIMULATION",
+    "depth_shape": [
+      960,
+      540
+    ],
+    "strike_permit": false,
+    "http_depth_npz": "passed",
+    "private_image_packaged": false
+  },
+  "unverified_on_device": [
+    "NEON sensor capture and rotation on target",
+    "Linux mmap/flock branch on target",
+    "aarch64 wheel loading with system OpenCV on target",
+    "TensorRT 8.5 engine compilation and execution",
+    "Embedded inference throughput and real physical gap accuracy"
+  ]
+}

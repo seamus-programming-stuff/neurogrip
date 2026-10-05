@@ -1,0 +1,17 @@
+{
+  "device": "/dev/video0",
+  "model": "models/depth.onnx",
+  "manifest": "models/manifest.json",
+  "backend": "cpu",
+  "threads": 4,
+  "bind": "0.0.0.0",
+  "port": 8092,
+  "display_max_age_ms": 10000,
+  "camera_calibration": "camera.json",
+  "teaching": "teaching.json",
+  "strike_config": "strike_config.json",
+  "controller_armed": false,
+  "shared_memory_name": "neurogrip_vision_v1",
+  "bus_rate_hz": 20,
+  "udp": {"enabled": false, "host": "192.168.55.100", "port": 55050, "source_port": 55051}
+}

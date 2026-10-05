@@ -1,0 +1,513 @@
+{
+  "actual_python_source_compilation": {
+    "files": [
+      "app.py",
+      "calibrate.py",
+      "capture.py",
+      "check_neon.py",
+      "depth_runtime.py",
+      "ethernet_bus_receiver.py",
+      "install_service.py",
+      "mapped_bus.py",
+      "network_bus.py",
+      "protocol.py",
+      "proximity.py",
+      "vision_tracking.py"
+    ],
+    "official_runtime_source": "https://www.python.org/ftp/python/3.8.10/python-3.8.10-embed-amd64.zip",
+    "result": "passed",
+    "version": "3.8.10"
+  },
+  "audit_format": 1,
+  "errors": [],
+  "limitations": [
+    "Metadata and wheel tag validation do not execute the Linux aarch64 binary extensions.",
+    "System OpenCV/NumPy ABI, ONNX model loading and camera mode are checked by install.sh/check_neon.py on the NEON."
+  ],
+  "pinned_versions": {
+    "coloredlogs": "15.0.1",
+    "distlib": "0.3.9",
+    "filelock": "3.13.4",
+    "flatbuffers": "23.5.26",
+    "humanfriendly": "10.0",
+    "importlib-metadata": "8.5.0",
+    "mpmath": "1.3.0",
+    "numpy": "1.24.4",
+    "onnxruntime": "1.16.3",
+    "packaging": "24.2",
+    "pip": "23.3.2",
+    "platformdirs": "4.3.6",
+    "protobuf": "4.25.5",
+    "sympy": "1.12",
+    "typing-extensions": "4.12.2",
+    "virtualenv": "20.26.6",
+    "zipp": "3.20.2"
+  },
+  "requirements_file": "requirements-offline.txt",
+  "result": "passed",
+  "target": {
+    "jetpack": "5.1.2",
+    "l4t": "35.4.1",
+    "machine": "aarch64",
+    "os": "Linux",
+    "python": "3.8.10",
+    "wheel_platforms": [
+      "manylinux_2_17_aarch64",
+      "manylinux2014_aarch64"
+    ]
+  },
+  "wheel_count": 17,
+  "wheels": [
+    {
+      "active_dependencies": [
+        {
+          "bundled_version": "10.0",
+          "name": "humanfriendly",
+          "requirement": "humanfriendly (>=9.1)",
+          "satisfied": true
+        }
+      ],
+      "bytes": 46018,
+      "file": "wheels/coloredlogs-15.0.1-py2.py3-none-any.whl",
+      "inactive_dependencies": [
+        "capturer (>=2.4) ; extra == 'cron'"
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "coloredlogs",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+      "sha256": "612ee75c546f53e92e70049c9dbfcc18c935a2b9a53b66085ce9ef6a6e5c0934",
+      "target_tags_accepted": true,
+      "version": "15.0.1"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 468973,
+      "file": "wheels/distlib-0.3.9-py2.py3-none-any.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "distlib",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": null,
+      "sha256": "47f8c22fd27c27e25a65601af709b38e4f0a45ea4fc2e710f65755fa8caaaf87",
+      "target_tags_accepted": true,
+      "version": "0.3.9"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 11890,
+      "file": "wheels/filelock-3.13.4-py3-none-any.whl",
+      "inactive_dependencies": [
+        "furo>=2023.9.10; extra == 'docs'",
+        "sphinx-autodoc-typehints!=1.23.4,>=1.25.2; extra == 'docs'",
+        "sphinx>=7.2.6; extra == 'docs'",
+        "covdefaults>=2.3; extra == 'testing'",
+        "coverage>=7.3.2; extra == 'testing'",
+        "diff-cover>=8.0.1; extra == 'testing'",
+        "pytest-cov>=4.1; extra == 'testing'",
+        "pytest-mock>=3.12; extra == 'testing'",
+        "pytest-timeout>=2.2; extra == 'testing'",
+        "pytest>=7.4.3; extra == 'testing'",
+        "typing-extensions>=4.8; (python_version < '3.11') and extra == 'typing'"
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "filelock",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "404e5e9253aa60ad457cae1be07c0f0ca90a63931200a47d9b6a6af84fd7b45f",
+      "target_tags_accepted": true,
+      "version": "3.13.4"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 26744,
+      "file": "wheels/flatbuffers-23.5.26-py2.py3-none-any.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "flatbuffers",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": null,
+      "sha256": "c0ff356da363087b915fde4b8b45bdda73432fc17cddb3c8157472eab1422ad1",
+      "target_tags_accepted": true,
+      "version": "23.5.26"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 86794,
+      "file": "wheels/humanfriendly-10.0-py2.py3-none-any.whl",
+      "inactive_dependencies": [
+        "monotonic ; python_version == \"2.7\"",
+        "pyreadline ; sys_platform == \"win32\" and python_version<\"3.8\"",
+        "pyreadline3 ; sys_platform == \"win32\" and python_version>=\"3.8\""
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "humanfriendly",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+      "sha256": "1697e1a8a8f550fd43c2865cd84542fc175a61dcb779b6fee18cf6b6ccba1477",
+      "target_tags_accepted": true,
+      "version": "10.0"
+    },
+    {
+      "active_dependencies": [
+        {
+          "bundled_version": "3.20.2",
+          "name": "zipp",
+          "requirement": "zipp >=3.20",
+          "satisfied": true
+        }
+      ],
+      "bytes": 26514,
+      "file": "wheels/importlib_metadata-8.5.0-py3-none-any.whl",
+      "inactive_dependencies": [
+        "typing-extensions >=3.6.4 ; python_version < \"3.8\"",
+        "pytest-checkdocs >=2.4 ; extra == 'check'",
+        "pytest-ruff >=0.2.1 ; (sys_platform != \"cygwin\") and extra == 'check'",
+        "pytest-cov ; extra == 'cover'",
+        "sphinx >=3.5 ; extra == 'doc'",
+        "jaraco.packaging >=9.3 ; extra == 'doc'",
+        "rst.linker >=1.9 ; extra == 'doc'",
+        "furo ; extra == 'doc'",
+        "sphinx-lint ; extra == 'doc'",
+        "jaraco.tidelift >=1.4 ; extra == 'doc'",
+        "pytest-enabler >=2.2 ; extra == 'enabler'",
+        "ipython ; extra == 'perf'",
+        "pytest !=8.1.*,>=6 ; extra == 'test'",
+        "packaging ; extra == 'test'",
+        "pyfakefs ; extra == 'test'",
+        "flufl.flake8 ; extra == 'test'",
+        "pytest-perf >=0.9.2 ; extra == 'test'",
+        "jaraco.test >=5.4 ; extra == 'test'",
+        "importlib-resources >=1.3 ; (python_version < \"3.9\") and extra == 'test'",
+        "pytest-mypy ; extra == 'type'"
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "importlib-metadata",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "45e54197d28b7a7f1559e60b95e7c567032b602131fbd588f1497f47880aa68b",
+      "target_tags_accepted": true,
+      "version": "8.5.0"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 536198,
+      "file": "wheels/mpmath-1.3.0-py3-none-any.whl",
+      "inactive_dependencies": [
+        "pytest (>=4.6) ; extra == 'develop'",
+        "pycodestyle ; extra == 'develop'",
+        "pytest-cov ; extra == 'develop'",
+        "codecov ; extra == 'develop'",
+        "wheel ; extra == 'develop'",
+        "sphinx ; extra == 'docs'",
+        "gmpy2 (>=2.1.0a4) ; (platform_python_implementation != \"PyPy\") and extra == 'gmpy'",
+        "pytest (>=4.6) ; extra == 'tests'"
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "mpmath",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": null,
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "target_tags_accepted": true,
+      "version": "1.3.0"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 14039616,
+      "file": "wheels/numpy-1.24.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "cp38-cp38-manylinux2014_aarch64",
+        "cp38-cp38-manylinux_2_17_aarch64"
+      ],
+      "name": "numpy",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "a5425b114831d1e77e4b5d812b69d11d962e104095a5b9c3b641a218abcc050e",
+      "target_tags_accepted": true,
+      "version": "1.24.4"
+    },
+    {
+      "active_dependencies": [
+        {
+          "bundled_version": "15.0.1",
+          "name": "coloredlogs",
+          "requirement": "coloredlogs",
+          "satisfied": true
+        },
+        {
+          "bundled_version": "23.5.26",
+          "name": "flatbuffers",
+          "requirement": "flatbuffers",
+          "satisfied": true
+        },
+        {
+          "bundled_version": "1.24.4",
+          "name": "numpy",
+          "requirement": "numpy (>=1.21.6)",
+          "satisfied": true
+        },
+        {
+          "bundled_version": "24.2",
+          "name": "packaging",
+          "requirement": "packaging",
+          "satisfied": true
+        },
+        {
+          "bundled_version": "4.25.5",
+          "name": "protobuf",
+          "requirement": "protobuf",
+          "satisfied": true
+        },
+        {
+          "bundled_version": "1.12",
+          "name": "sympy",
+          "requirement": "sympy",
+          "satisfied": true
+        }
+      ],
+      "bytes": 5746284,
+      "file": "wheels/onnxruntime-1.16.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "cp38-cp38-manylinux2014_aarch64",
+        "cp38-cp38-manylinux_2_17_aarch64"
+      ],
+      "name": "onnxruntime",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": null,
+      "sha256": "5b8f5083f903408238883821dd8c775f8120cb4a604166dbdabe97f4715256d5",
+      "target_tags_accepted": true,
+      "version": "1.16.3"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 65451,
+      "file": "wheels/packaging-24.2-py3-none-any.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "packaging",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759",
+      "target_tags_accepted": true,
+      "version": "24.2"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 2109393,
+      "file": "wheels/pip-23.3.2-py3-none-any.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "pip",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.7",
+      "sha256": "5052d7889c1f9d05224cd41741acb7c5d6fa735ab34e339624a614eaaa7e7d76",
+      "target_tags_accepted": true,
+      "version": "23.3.2"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 18439,
+      "file": "wheels/platformdirs-4.3.6-py3-none-any.whl",
+      "inactive_dependencies": [
+        "furo>=2024.8.6; extra == 'docs'",
+        "proselint>=0.14; extra == 'docs'",
+        "sphinx-autodoc-typehints>=2.4; extra == 'docs'",
+        "sphinx>=8.0.2; extra == 'docs'",
+        "appdirs==1.4.4; extra == 'test'",
+        "covdefaults>=2.3; extra == 'test'",
+        "pytest-cov>=5; extra == 'test'",
+        "pytest-mock>=3.14; extra == 'test'",
+        "pytest>=8.3.2; extra == 'test'",
+        "mypy>=1.11.2; extra == 'type'"
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "platformdirs",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "73e575e1408ab8103900836b97580d5307456908a03e92031bab39e4554cc3fb",
+      "target_tags_accepted": true,
+      "version": "4.3.6"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 293717,
+      "file": "wheels/protobuf-4.25.5-cp37-abi3-manylinux2014_aarch64.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "cp37-abi3-manylinux2014_aarch64"
+      ],
+      "name": "protobuf",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "919ad92d9b0310070f8356c24b855c98df2b8bd207ebc1c0c6fcc9ab1e007f3d",
+      "target_tags_accepted": true,
+      "version": "4.25.5"
+    },
+    {
+      "active_dependencies": [
+        {
+          "bundled_version": "1.3.0",
+          "name": "mpmath",
+          "requirement": "mpmath (>=0.19)",
+          "satisfied": true
+        }
+      ],
+      "bytes": 5742435,
+      "file": "wheels/sympy-1.12-py3-none-any.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "sympy",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "c3588cd4295d0c0f603d0f2ae780587e64e2efeedb3521e46b9bb1d08d184fa5",
+      "target_tags_accepted": true,
+      "version": "1.12"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 37438,
+      "file": "wheels/typing_extensions-4.12.2-py3-none-any.whl",
+      "inactive_dependencies": [],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "typing-extensions",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+      "target_tags_accepted": true,
+      "version": "4.12.2"
+    },
+    {
+      "active_dependencies": [
+        {
+          "bundled_version": "0.3.9",
+          "name": "distlib",
+          "requirement": "distlib<1,>=0.3.7",
+          "satisfied": true
+        },
+        {
+          "bundled_version": "3.13.4",
+          "name": "filelock",
+          "requirement": "filelock<4,>=3.12.2",
+          "satisfied": true
+        },
+        {
+          "bundled_version": "4.3.6",
+          "name": "platformdirs",
+          "requirement": "platformdirs<5,>=3.9.1",
+          "satisfied": true
+        }
+      ],
+      "bytes": 5999862,
+      "file": "wheels/virtualenv-20.26.6-py3-none-any.whl",
+      "inactive_dependencies": [
+        "importlib-metadata>=6.6; python_version < '3.8'",
+        "furo>=2023.7.26; extra == 'docs'",
+        "proselint>=0.13; extra == 'docs'",
+        "sphinx!=7.3,>=7.1.2; extra == 'docs'",
+        "sphinx-argparse>=0.4; extra == 'docs'",
+        "sphinxcontrib-towncrier>=0.2.1a0; extra == 'docs'",
+        "towncrier>=23.6; extra == 'docs'",
+        "covdefaults>=2.3; extra == 'test'",
+        "coverage-enable-subprocess>=1; extra == 'test'",
+        "coverage>=7.2.7; extra == 'test'",
+        "flaky>=3.7; extra == 'test'",
+        "packaging>=23.1; extra == 'test'",
+        "pytest-env>=0.8.2; extra == 'test'",
+        "pytest-freezer>=0.4.8; (platform_python_implementation == 'PyPy' or (platform_python_implementation == 'CPython' and sys_platform == 'win32' and python_version >= '3.13')) and extra == 'test'",
+        "pytest-mock>=3.11.1; extra == 'test'",
+        "pytest-randomly>=3.12; extra == 'test'",
+        "pytest-timeout>=2.1; extra == 'test'",
+        "pytest>=7.4; extra == 'test'",
+        "setuptools>=68; extra == 'test'",
+        "time-machine>=2.10; (platform_python_implementation == 'CPython') and extra == 'test'"
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "virtualenv",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.7",
+      "sha256": "7345cc5b25405607a624d8418154577459c3e0277f5466dd79c49d5e492995f2",
+      "target_tags_accepted": true,
+      "version": "20.26.6"
+    },
+    {
+      "active_dependencies": [],
+      "bytes": 9200,
+      "file": "wheels/zipp-3.20.2-py3-none-any.whl",
+      "inactive_dependencies": [
+        "pytest-checkdocs >=2.4 ; extra == 'check'",
+        "pytest-ruff >=0.2.1 ; (sys_platform != \"cygwin\") and extra == 'check'",
+        "pytest-cov ; extra == 'cover'",
+        "sphinx >=3.5 ; extra == 'doc'",
+        "jaraco.packaging >=9.3 ; extra == 'doc'",
+        "rst.linker >=1.9 ; extra == 'doc'",
+        "furo ; extra == 'doc'",
+        "sphinx-lint ; extra == 'doc'",
+        "jaraco.tidelift >=1.4 ; extra == 'doc'",
+        "pytest-enabler >=2.2 ; extra == 'enabler'",
+        "pytest !=8.1.*,>=6 ; extra == 'test'",
+        "jaraco.itertools ; extra == 'test'",
+        "jaraco.functools ; extra == 'test'",
+        "more-itertools ; extra == 'test'",
+        "big-O ; extra == 'test'",
+        "pytest-ignore-flaky ; extra == 'test'",
+        "jaraco.test ; extra == 'test'",
+        "importlib-resources ; (python_version < \"3.9\") and extra == 'test'",
+        "pytest-mypy ; extra == 'type'"
+      ],
+      "matching_target_tags": [
+        "py3-none-any"
+      ],
+      "name": "zipp",
+      "pin_matches": true,
+      "python38_accepted": true,
+      "requires_python": ">=3.8",
+      "sha256": "a817ac80d6cf4b23bf7f2828b7cabf326f15a001bea8b1f9b49631780ba28350",
+      "target_tags_accepted": true,
+      "version": "3.20.2"
+    }
+  ]
+}

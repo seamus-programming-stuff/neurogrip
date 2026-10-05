@@ -1,0 +1,5 @@
+Depth Anything V2 Metric Hypersim Small, Apache License 2.0.
+Authors: Lihe Yang, Bingyi Kang, Zilong Huang, Xiaogang Xu, Jiashi Feng, Hengshuang Zhao.
+Model: https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Hypersim-Small
+Code: https://github.com/DepthAnything/Depth-Anything-V2
+Modifications: exported metric inference to a fixed portrait ONNX graph; short side 252 pixels; no retraining.

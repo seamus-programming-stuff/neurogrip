@@ -1,0 +1,24 @@
+# Optional local metric-depth runtime; base app requirements are separate.
+# Install a matching Torch / Torchvision build first, using the official PyTorch
+# selector https://pytorch.org/get-started/locally/ (CUDA for an NVIDIA GPU).
+# For this NVIDIA PC: torch 2.11.0 + torchvision 0.26.0, official CUDA 12.8 wheels.
+# The manifest deliberately does not replace the user's selected Torch build.
+#
+# Clone official source separately; avoid the upstream package's unused 3D
+# export dependencies and restrictive Python package metadata:
+#   git clone https://github.com/ByteDance-Seed/Depth-Anything-3.git .vendor/depth-anything-3
+#   git -C .vendor/depth-anything-3 checkout 3d835ec1a5802d64a8b8b15f817a1ab54809bfe4
+# MetricDepthBackend automatically finds this source directory.
+# No xformers, open3d, pycolmap, evo, moviepy, or gsplat is needed for this path.
+# Official model ID depth-anything/DA3METRIC-LARGE, Apache-2.0.
+# Pinned checkpoint revision: 4010e39f3634a45bc60553321fb49fb760bd594e.
+# Weights download once on first inference; all frame inference is local.
+
+huggingface-hub>=1.0,<3
+safetensors>=0.5,<1
+omegaconf>=2.3,<3
+addict==2.4.0
+einops>=0.8,<1
+imageio>=2.30,<3
+tqdm>=4.66,<5
+pillow>=10,<13

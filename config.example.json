@@ -1,0 +1,22 @@
+{
+  "valid_for_ms": 500,
+  "min_quality": 0.6,
+  "min_valid_fraction": 0.75,
+  "min_region_pixels": 30,
+  "enable_hits": 3,
+  "max_target_speed_mm_s": 50.0,
+  "max_finger_speed_mm_s": 50.0,
+  "min_depth_mm": 100.0,
+  "max_depth_mm": 2000.0,
+  "depth_scale": 1.0,
+  "gap_error_mm": null,
+  "measurement_validated": false,
+  "capture_timing_validated": false,
+  "source_delay_bound_ms": null,
+  "camera_to_finger": null,
+  "strokes": {},
+  "tip_radius_mm": 5.0,
+  "start_tolerance_mm": 15.0,
+  "obstacle_margin_mm": 10.0,
+  "stroke_geometry_validated": false
+}
